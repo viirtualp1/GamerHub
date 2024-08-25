@@ -1,0 +1,15 @@
+@import 'assets/scss/main';
+
+.app-header {
+  margin-top: 24px;
+  padding: 20px 24px;
+  box-shadow: 0 0 10px 0 rgba(34, 60, 80, 0.2);
+  border-radius: 14px;
+
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: $color-tomato;
+  }
+}

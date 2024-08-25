@@ -1,0 +1,16 @@
+html,
+body {
+  margin: 0;
+  background: $color-white;
+  font-family: Montserrat, sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+}

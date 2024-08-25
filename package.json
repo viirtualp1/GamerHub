@@ -1,0 +1,23 @@
+{
+  "name": "gamerhub",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.13.0",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@vueuse/core": "^11.0.3",
+    "eslint": "^9.9.1",
+    "prettier": "^3.3.3",
+    "sass": "^1.77.8",
+    "vue-tsc": "^2.0.29"
+  }
+}
