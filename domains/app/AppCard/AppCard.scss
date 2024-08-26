@@ -1,0 +1,16 @@
+@import 'assets/scss/main';
+
+.app-card {
+  position: relative;
+  min-height: 120px;
+  padding: 20px 24px;
+  border-radius: $card-border-radius;
+  background: $color-accent;
+  box-shadow: 0 0 10px 0 rgba(34, 60, 80, 0.2);
+
+  &__icon {
+    position: absolute;
+    right: 24px;
+    bottom: 20px;
+  }
+}

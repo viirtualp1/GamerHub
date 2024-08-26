@@ -1,0 +1,10 @@
+.app-page {
+  &__row {
+    display: flex;
+    margin-top: 24px;
+  }
+
+  &__card {
+    flex: 0 0 25%;
+  }
+}
