@@ -12,6 +12,7 @@
           <app-card-title>
             {{ card.name }}
           </app-card-title>
+
           <app-card-text>
             {{ card.description }}
           </app-card-text>
@@ -28,7 +29,9 @@ import {
   AppCardText,
   type IconOptions,
 } from '@/domains/app'
-import ArrowRightIcon from '@/assets/icons/arrow-right.svg'
+import ArrowRightIcon from '@/assets/icons/icon-arrow-right.svg'
+import PeopleIcon from '@/assets/icons/icon-people.svg'
+import MovieIcon from '@/assets/icons/icon-movie.svg'
 
 interface CardData {
   name: string
@@ -44,6 +47,26 @@ const cards = computed<CardData[]>(() => [
     link: '/catalog',
     icon: {
       image: ArrowRightIcon,
+      width: 20,
+      height: 24,
+    },
+  },
+  {
+    name: 'Чаты',
+    description: 'Общение!',
+    link: '/chat',
+    icon: {
+      image: PeopleIcon,
+      width: 24,
+      height: 24,
+    },
+  },
+  {
+    name: 'Видео',
+    description: 'Дота, кс, валорант!',
+    link: '/videos',
+    icon: {
+      image: MovieIcon,
       width: 24,
       height: 24,
     },

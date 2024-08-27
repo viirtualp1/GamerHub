@@ -1,6 +1,12 @@
 @import 'assets/scss/main';
 
 .app-header {
+  padding: 0 24px;
+
+  @include media-xl-up {
+    padding: 0;
+  }
+
   &__content {
     margin-top: 24px;
     padding: 20px 24px;
