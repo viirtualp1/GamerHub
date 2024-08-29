@@ -1,3 +1,3 @@
-<template>soon</template>
-
-<script setup lang="ts"></script>
+<template>
+  <div class="container">soon</div>
+</template>

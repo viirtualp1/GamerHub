@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <v-app>
     <nuxt-layout>
       <nuxt-page />
     </nuxt-layout>
-  </div>
+  </v-app>
 </template>
 
 <script setup lang="ts">

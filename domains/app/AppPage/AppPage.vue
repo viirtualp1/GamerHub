@@ -6,8 +6,8 @@
           v-for="(card, cardIdx) in cards"
           :key="cardIdx"
           class="app-page__card"
-          :to="card.link"
           :icon="card.icon"
+          @click="card.onClick"
         >
           <app-card-title>
             {{ card.name }}
@@ -19,59 +19,62 @@
         </app-card>
       </div>
     </div>
+
+    <auth-modal v-model="isOpen" />
   </div>
 </template>
 
 <script setup lang="ts">
-import {
-  AppCard,
-  AppCardTitle,
-  AppCardText,
-  type IconOptions,
-} from '@/domains/app'
-import ArrowRightIcon from '@/assets/icons/icon-arrow-right.svg'
-import PeopleIcon from '@/assets/icons/icon-people.svg'
-import MovieIcon from '@/assets/icons/icon-movie.svg'
+import { useRouter } from '#app'
+import { AppCard, AppCardTitle, AppCardText } from '@/domains/app'
+import { useAuth } from '@/domains/auth'
+import { AuthModal } from '@/domains/auth'
+import { useGhModal } from '@/domains/ui'
 
-interface CardData {
-  name: string
-  description: string
-  link: string
-  icon: IconOptions
-}
+const { loggedIn } = useAuth()
+const { isOpen, open } = useGhModal()
+const router = useRouter()
 
-const cards = computed<CardData[]>(() => [
-  {
-    name: 'Каталог',
-    description: 'Игры, люди!',
-    link: '/catalog',
-    icon: {
-      image: ArrowRightIcon,
-      width: 20,
-      height: 24,
+const cards = computed(() =>
+  [
+    {
+      name: loggedIn.value ? 'Профиль' : 'Вход',
+      description: 'Познавайте мир гейминга с нами!',
+      onClick: loggedIn.value ? () => router.push('/profile') : open,
+      icon: {
+        name: 'mdi-login',
+        size: 20,
+      },
     },
-  },
-  {
-    name: 'Чаты',
-    description: 'Общение!',
-    link: '/chat',
-    icon: {
-      image: PeopleIcon,
-      width: 24,
-      height: 24,
+    {
+      name: 'Форумы',
+      description: 'Обсуждайте игровые события',
+      onClick: () => router.push('/forum'),
+      icon: {
+        name: 'mdi-people',
+        size: 24,
+      },
     },
-  },
-  {
-    name: 'Видео',
-    description: 'Дота, кс, валорант!',
-    link: '/videos',
-    icon: {
-      image: MovieIcon,
-      width: 24,
-      height: 24,
+    loggedIn.value && {
+      name: 'Чаты',
+      description: 'Общение!',
+      onClick: () => router.push('/chat'),
+      icon: {
+        name: 'mdi-account-multiple',
+        size: 24,
+      },
     },
-  },
-])
+    {
+      name: 'Видео',
+      description: 'Дота, кс, валорант!',
+      onClick: () => router.push('/video'),
+      icon: {
+        name: 'mdi-movie',
+        size: 24,
+      },
+    },
+  ].filter(Boolean),
+)
 </script>
 
 <style src="./AppPage.scss"></style>

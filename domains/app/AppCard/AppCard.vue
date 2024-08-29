@@ -1,26 +1,29 @@
 <template>
-  <nuxt-link class="app-card" :to="to">
+  <component :is="component" class="app-card" :to="to">
     <slot />
 
     <div v-if="icon" class="app-card__icon">
-      <img
-        :src="icon.image"
-        :width="icon.width"
-        :height="icon.height"
+      <v-icon
+        v-if="icon"
+        :icon="icon.name"
+        :size="icon.size"
         class="app-card__icon-image"
-        :alt="icon.alt || 'Card icon'"
       />
     </div>
-  </nuxt-link>
+  </component>
 </template>
 
 <script setup lang="ts">
 import type { IconOptions } from './types'
 
-defineProps<{
-  to: string
+const props = defineProps<{
+  to?: string
   icon?: IconOptions
 }>()
+
+const component = computed(() => {
+  return props.to ? 'nuxt-link' : 'button'
+})
 </script>
 
 <style src="./AppCard.scss"></style>

@@ -2,11 +2,15 @@
 
 .app-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 120px;
   padding: 20px 24px;
+  text-align: left;
   border-radius: $card-border-radius;
   background: $color-accent;
   box-shadow: 0 0 10px 0 rgba(34, 60, 80, 0.2);
+  cursor: pointer;
 
   &__icon {
     position: absolute;

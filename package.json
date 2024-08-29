@@ -14,10 +14,13 @@
     "vue": "latest"
   },
   "devDependencies": {
+    "@mdi/font": "^7.4.47",
     "@vueuse/core": "^11.0.3",
     "eslint": "^9.9.1",
     "prettier": "^3.3.3",
     "sass": "^1.77.8",
-    "vue-tsc": "^2.0.29"
+    "vite-plugin-vuetify": "^2.0.4",
+    "vue-tsc": "^2.0.29",
+    "vuetify": "^3.7.0"
   }
 }
