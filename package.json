@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@vee-validate/nuxt": "^4.13.2",
     "nuxt": "^3.13.0",
     "vue": "latest"
   },
@@ -19,6 +20,7 @@
     "eslint": "^9.9.1",
     "prettier": "^3.3.3",
     "sass": "^1.77.8",
+    "vee-validate": "^4.13.2",
     "vite-plugin-vuetify": "^2.0.4",
     "vue-tsc": "^2.0.29",
     "vuetify": "^3.7.0"

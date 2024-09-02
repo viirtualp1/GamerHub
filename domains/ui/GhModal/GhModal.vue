@@ -1,12 +1,18 @@
 <template>
   <v-dialog class="gh-modal" v-model="currentModelValue" :max-width="maxWidth">
-    <v-card>
+    <v-card color="#22333b">
       <v-card-title class="gh-modal__header">
         <slot name="header" />
 
         <v-spacer />
 
-        <v-btn :icon="true" :elevation="0" @click="close">
+        <v-btn
+          :icon="true"
+          :elevation="0"
+          color="#eae0d5"
+          size="small"
+          @click="close"
+        >
           <v-icon icon="mdi-close" />
         </v-btn>
       </v-card-title>
